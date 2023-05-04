@@ -72,33 +72,12 @@ public class GameManager : MonoBehaviour
             UpdateScore();
         }
     }
-
-
+    
     private void Update()
     {
-        //curTime += Time.deltaTime;
 
         if (gameOver)
         {
-            //if(logger)
-            //{
-            //    GameDataLog.LoggingDeathResults log = new GameDataLog.LoggingDeathResults();
-
-
-            //    log.timestamp = ((int)curTime).ToString();
-            //    log.levelID =  SceneManager.GetActiveScene().ToString();
-
-            //    if(logger)
-            //    {
-            //        logger.LogDeathResultData(log);
-            //    }
-
-            //    else
-            //    {
-            //        Debug.Log("No logger drag dropped into game manager.");
-            //    }
-            //}
-
             // If a participant loses 6 times, they'll be kicked out of the game and redirected to the surveys
             if (deathCountPerLevel >= 6)
             {

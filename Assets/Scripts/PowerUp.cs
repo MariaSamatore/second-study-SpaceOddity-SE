@@ -30,6 +30,8 @@ public class PowerUp : MonoBehaviour
     [SerializeField] private GameObject doubleGunTimerGraphic;
     [SerializeField] private GameObject magnetTimerGraphic;
 
+
+
     private void Start()
     {
         /*Because I defined the magnetic radius as a static variable in the coin class (script), 
@@ -57,9 +59,9 @@ public class PowerUp : MonoBehaviour
             {
                 Player stats = other.GetComponent<Player>();
                 stats.health += healthBoostValue;
-                if (stats.health > 100)
+                if (stats.health > 50)
                 {
-                    stats.health = 100;
+                    stats.health = 50;
                 }
                 GameManager.instance.UpdateHealth(stats.health);
                 Destroy(this.gameObject);

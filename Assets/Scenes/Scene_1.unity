@@ -451,7 +451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &225881618
 RectTransform:
   m_ObjectHideFlags: 0
@@ -818,7 +818,7 @@ MonoBehaviour:
   participantID: 
   scoreText: {fileID: 997100900}
   healthText: {fileID: 225881619}
-  maxHealth: 100
+  maxHealth: 50
   healthBar: {fileID: 967684981}
   lerpSpeed: 3
   gameOver: 0
@@ -3751,7 +3751,7 @@ MonoBehaviour:
   playerNameField: {fileID: 492882386}
   damageVFX: {fileID: 100006, guid: 30b4cc2728d8cec499fad63ba93785a4, type: 3}
   damageSFX: {fileID: 8300000, guid: 4bda63250b3c2ad489f6a09d05682b78, type: 3}
-  health: 100
+  health: 50
   explosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 3}
   boundary:
     xMin: -4.35

@@ -24,6 +24,7 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private AudioClip[] praiseSFX;
 
 
+
     void Start()
     {
         GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * tumble;
@@ -62,6 +63,7 @@ public class Asteroid : MonoBehaviour
         health -= damage;
         if (health == 0)
         {
+
             GameObject effect = Instantiate(explosion, transform.position, transform.rotation);
             Destroy(this.gameObject);
             Destroy(effect, 1.0f);
@@ -75,13 +77,9 @@ public class Asteroid : MonoBehaviour
                 {
                     InstantiatePowerUp();
 
-
                     //Praise the player
-                    AudioClip clip = praiseSFX[UnityEngine.Random.Range(0, praiseSFX.Length - 1)];
-                    AudioSource.PlayClipAtPoint(clip, transform.position, 1.0f);
-
-                    //AudioClip clip = praiseSFX[UnityEngine.Random.Range(0, praiseSFX.Length - 1)];
-                    //AudioSource.PlayOneShot(clip, 1.0f);
+                    AudioClip praiseClip = praiseSFX[UnityEngine.Random.Range(0, praiseSFX.Length - 1)];
+                    AudioSource.PlayClipAtPoint(praiseClip, transform.position);
                 }
             }
         }
@@ -96,7 +94,7 @@ public class Asteroid : MonoBehaviour
             Instantiate(dropCollectible[0], this.transform.position, Quaternion.identity);
         }
 
-        else if (playerHealth == 100) //Don't instantiate health pack
+        else if (playerHealth == 50) //Don't instantiate health pack
         {
             Instantiate(dropCollectible[Random.Range(1, 3)], this.transform.position, Quaternion.identity);
         }
