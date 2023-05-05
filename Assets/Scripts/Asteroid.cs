@@ -24,7 +24,6 @@ public class Asteroid : MonoBehaviour
     [SerializeField] private AudioClip[] praiseSFX;
 
 
-
     void Start()
     {
         GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * tumble;
@@ -77,9 +76,9 @@ public class Asteroid : MonoBehaviour
                 {
                     InstantiatePowerUp();
 
-                    //Praise the player
+                    //Generating a random phrase
                     AudioClip praiseClip = praiseSFX[UnityEngine.Random.Range(0, praiseSFX.Length - 1)];
-                    AudioSource.PlayClipAtPoint(praiseClip, transform.position);
+                    GameManager.instance.PlayPraiseSFX(praiseClip);
                 }
             }
         }

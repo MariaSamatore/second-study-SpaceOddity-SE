@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.IO;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -42,6 +43,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] AudioClip coinSound;
 
     private float coin_timer = 0f;
+
+
+    [SerializeField] private AudioSource audioSource; //This is for the praise
 
 
     private void Awake()
@@ -119,7 +123,9 @@ public class GameManager : MonoBehaviour
         if (healthText) 
         {
             if (health < 0) health = 0;
-            healthText.text = health + "%";
+            
+            float percentage = health / maxHealth * 100;
+            healthText.text = Mathf.FloorToInt(percentage) + "%";
 
             //Health bar
             lerpSpeed = 3f * Time.deltaTime;
@@ -160,4 +166,9 @@ public class GameManager : MonoBehaviour
         return score;
     }
 
+
+    public void PlayPraiseSFX(AudioClip praiseClip)
+    {
+        audioSource.PlayOneShot(praiseClip, 1.0f);
+    }
 }

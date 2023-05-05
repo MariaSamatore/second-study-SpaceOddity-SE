@@ -59,9 +59,10 @@ public class PowerUp : MonoBehaviour
             {
                 Player stats = other.GetComponent<Player>();
                 stats.health += healthBoostValue;
-                if (stats.health > 50)
+                float maxHealth = GameManager.instance.maxHealth;
+                if (stats.health > maxHealth)
                 {
-                    stats.health = 50;
+                    stats.health = maxHealth;
                 }
                 GameManager.instance.UpdateHealth(stats.health);
                 Destroy(this.gameObject);
