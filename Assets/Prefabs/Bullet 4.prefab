@@ -31,7 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.71726567, y: 0, z: 0.59727657}
   m_LocalScale: {x: 0.07, y: 1, z: 0.16}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -123,8 +123,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.44083557
+        time: 0.079776764
+        value: 0.6794815
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -136,9 +136,9 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.90588236, g: 0.15413874, b: 0.11372546, a: 1}
-      key1: {r: 1, g: 0.8904409, b: 0.043137252, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.11372546, g: 0.90588236, b: 0.18557307, a: 1}
+      key1: {r: 0.7726484, g: 1, b: 0.043137252, a: 1}
+      key2: {r: 0.043137252, g: 0.49171823, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -146,7 +146,7 @@ TrailRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 26792
       ctime1: 41827
-      ctime2: 0
+      ctime2: 42791
       ctime3: 0
       ctime4: 0
       ctime5: 0
