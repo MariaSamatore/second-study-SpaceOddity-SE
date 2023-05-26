@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
     
     //Health Bar
     public Image healthBar;
-    public float lerpSpeed;
 
     //game over and restart
     [HideInInspector] public bool gameOver;
@@ -66,7 +65,7 @@ public class GameManager : MonoBehaviour
     {
         Application.SetStackTraceLogType(LogType.Error, StackTraceLogType.Full); 
         username = PlayerPrefs.GetString("playerNamePref"); 
-        //curTime = 0;
+
         gameOver = false;
         restart = false;
         if (gameOverText && restartText)
@@ -128,10 +127,17 @@ public class GameManager : MonoBehaviour
             healthText.text = Mathf.FloorToInt(percentage) + "%";
 
             //Health bar
-            lerpSpeed = 3f * Time.deltaTime;
             healthBar.fillAmount = health / maxHealth;
-            Color healthColor = Color.Lerp(Color.red, Color.green, health / maxHealth);
-            healthBar.color = healthColor;
+
+            if (health < (maxHealth * 30 / 100)) healthBar.color = Color.red;
+
+            else if (health >= (maxHealth * 30 / 100) && health < (maxHealth * 50 / 100)) healthBar.color = new Color(1, 0.55f, 0, 1);
+
+            else if (health >= (maxHealth * 50 / 100) && health < (maxHealth * 70 / 100)) healthBar.color = Color.yellow;
+
+            else if (health >= (maxHealth * 70 / 100) && health < (maxHealth * 90 / 100)) healthBar.color = new Color(0.66f, 0.94f, 0.2f, 1);
+
+            else if (health >= (maxHealth * 90 / 100)) healthBar.color = new Color(0, 0.8f, 0, 1);
         }
     }
 
@@ -165,7 +171,6 @@ public class GameManager : MonoBehaviour
     {
         return score;
     }
-
 
     public void PlayPraiseSFX(AudioClip praiseClip)
     {

@@ -1204,7 +1204,6 @@ MonoBehaviour:
   healthText: {fileID: 1994300740}
   maxHealth: 50
   healthBar: {fileID: 165231904}
-  lerpSpeed: 3
   gameOver: 0
   restart: 0
   gameOverText: {fileID: 300723557}
@@ -3885,8 +3884,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5328429, y: 0.26011217, z: 0.6385093}
-  m_Center: {x: 0, y: 0.0026696026, z: -0.002780676}
+  m_Size: {x: 0.46679354, y: 0.26011217, z: 0.59745157}
+  m_Center: {x: -0.00089254975, y: 0.0026696026, z: -0.0018880963}
 --- !u!4 &2104165610
 Transform:
   m_ObjectHideFlags: 0
